@@ -1,1 +1,1 @@
-# rtl8812cu
+# rtl88xx
