@@ -1,0 +1,34 @@
+From f3765ebde35bf19cf9ff9a7194506250d2455354 Mon Sep 17 00:00:00 2001
+From: Jason Tsang <jasontsang.dev@gmail.com>
+Date: Sun, 26 Dec 2021 14:26:07 +0800
+Subject: [PATCH] change default value of vht_enable-switch_usb_mode
+
+---
+ os_dep/linux/os_intfs.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/os_dep/linux/os_intfs.c b/os_dep/linux/os_intfs.c
+index 57997d6..effe030 100755
+--- a/os_dep/linux/os_intfs.c
++++ b/os_dep/linux/os_intfs.c
+@@ -313,7 +313,7 @@ int rtw_bfee_rf_number = 0; /*BeamformeeCapRfNum  Rf path number, 0 for auto, ot
+ #endif /* CONFIG_80211N_HT */
+ 
+ #ifdef CONFIG_80211AC_VHT
+-int rtw_vht_enable = 1; /* 0:disable, 1:enable, 2:force auto enable */
++int rtw_vht_enable = 2; /* 0:disable, 1:enable, 2:force auto enable */
+ module_param(rtw_vht_enable, int, 0644);
+ 
+ int rtw_ampdu_factor = 7;
+@@ -396,7 +396,7 @@ int rtw_drv_ant_band_switch = 1; /* 0:OFF , 1:ON, Driver control antenna band sw
+ int rtw_single_ant_path; /*0:main ant , 1:aux ant , Fixed single antenna path, default main ant*/
+ 
+ /* 0: doesn't switch, 1: switch from usb2.0 to usb 3.0 2: switch from usb3.0 to usb 2.0 */
+-int rtw_switch_usb_mode = 0;
++int rtw_switch_usb_mode = 1;
+ 
+ #ifdef CONFIG_USB_AUTOSUSPEND
+ int rtw_enusbss = 1;/* 0:disable,1:enable */
+-- 
+2.32.0 (Apple Git-132)
+
